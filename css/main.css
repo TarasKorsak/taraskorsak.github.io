@@ -541,3 +541,93 @@ section .personal_header {
   margin-top: 5px;
   height: 325px;
 }
+/* ------------Projects section ---------------*/
+.projwrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 290px;
+  height: 300px;
+  position: relative;
+  perspective: 1000px;
+	margin-left: 20px;
+	}
+.card:nth-of-type(1) .front {
+	background: url(../img/pjtest.png);
+}
+.card:nth-of-type(2) .front {
+	background: url(../img/eleken.png);
+}
+.card:nth-of-type(3) .front {
+	background: url(../img/pdffiller.png);
+}
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+.front {
+  background-color: #fff;
+}
+.back {
+  background-color: #BDBDBD;
+	transform: rotateY(180deg);
+	position: relative;
+	padding-top: 20px;
+}
+.back .title {
+	/* margin: 30px auto; */
+	margin-top: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 22px;
+	text-align: center;
+}
+.back p {
+	margin: 20px auto;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+.back button {
+	width: 150px;
+	height: 40px;
+	position: absolute;
+	margin: auto;
+	bottom: 40px;
+	left: calc(50% - 75px);
+	background-color: transparent;
+	border: 3px solid #BC0D13;
+	border-radius: 5px;
+	text-align: center;
+	transition: 1s;
+}
+.back button:hover {
+	background-color: rgba(188, 13, 19, 0.5);
+}
+.back button:hover a {
+	color: #fff;
+}
+.back a {
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 3px;
+}
+.card:hover .front {transform: rotateY(180deg);}
+.card:hover .back {transform: rotateY(360deg);}
